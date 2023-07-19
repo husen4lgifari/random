@@ -1,0 +1,85 @@
+
+<html><meta charset='UTF-8'/><meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/><meta content='IE=edge' http-equiv='X-UA-Compatible'/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script><link href="https://inginku.likeadream.repl.co/style.css" rel="stylesheet" type="text/css" /><script src="https://inginku.likeadream.repl.co/script.js"></script>
+<head>
+</head>
+<body><div id="bodyblur"><img src="https://i.postimg.cc/SRHCwxg2/IMG-20211223-114043-063.jpg" width="100%" height="100%"/></div>
+
+<!-- Isi Konten --><div id='Content'>
+<div class="image"><img id="idmail" src="https://i.postimg.cc/xdkh6nd8/Nice-Png-envelope-png-113049.png" onClick='showAkhir();play();this.onclick=null;'/></div>
+<!-- Gambar Bergerak --><div class="image"><img id="idfoto" src="https://i.postimg.cc/66C3d4H0/panda-gemoi.gif"/></div><!--<div id="sp1"></div>-->
+<p id="idgeser">Sentuh Suratnya!</p>
+
+<div id="idakhir"></div><div id="idakhirdua"></div>
+
+</div>
+
+<script>
+     function showDiv() {document.getElementById('idmail').style = "opacity:1;transform:scale(1);";document.getElementById('Content').style.opacity = "1";document.getElementById('Content').style.margin = "0";document.getElementById('idfoto').style.height = "0px";} function nonDiv() {document.getElementById('Content').style.display = "none";}
+     function showAkhir() {document.getElementById('idmail').style = "transform:scale(.01);opacity:0;";document.getElementById('idgeser').style.display = "none";setTimeout(memulai, 1000);}
+     function memulai() {pesan();document.getElementById('idmail').style.display = "none";document.getElementById('idakhir').style = "opacity:1;";document.getElementById('idakhir').style.animation = "kont 3s infinite";document.getElementById('idfoto').style.height = "150px";}
+     function showTom() {document.getElementById('idkirim').style = "opacity:1;visibility:visible;margin-top:90px;";}
+     
+     var i=0,katakhir;katakhir = "";
+     function ketik() {if(i<katakhir.length){document.getElementById("idakhir").innerHTML += katakhir.charAt(i);i++;setTimeout(ketik,100);}
+       if(i==katakhir.length){ketikk();document.getElementById("idakhir").innerHTML = katakhir + emotsenyum;document.getElementById('idfoto').style = "opacity:1;transform:scale(1);";document.getElementById('idakhirdua').style = "opacity:1;animation:kont 3s infinite;";}
+     }
+     var u=0,katakhirdua;katakhirdua = "";
+     function ketikk() {if(u<katakhirdua.length){document.getElementById("idakhirdua").innerHTML += katakhirdua.charAt(u);u++;setTimeout(ketikk,200);}
+       if(u==katakhirdua.length){setTimeout(showTom,3000);}
+     }
+     
+     async function menuju(){
+await swals.fire({
+  
+  focusConfirm: false,
+});
+    window.location = "https://bit.ly/scriptbucin2021"; 
+     } 
+</script>
+
+<!-- Kata Akhir dan Audio --><script type="text/javascript">
+function play() {var audio = new 
+Audio('https://inginku.likeadream.repl.co/faudio.mp3');audio.play();}
+
+      const swals = Swal.mixin({backdrop: 'rgba(0,0,123,0.4)', allowOutsideClick: false, cancelButtonColor: '#FF0040',});
+      const swalsy = Swal.mixin({confirmButtonText: 'Iya', allowOutsideClick: false,});
+      const swalst = Swal.mixin({allowOutsideClick: false, showConfirmButton: false, timer: 1500, timerProgressBar: true,});
+            
+      async function mulaipop(){
+    	await swalst.fire({
+           title: 'Tunggu yaa~',
+           });
+           emotsenyum = "&#129392;";
+           katakhir = "I Love You ";
+           katakhirdua = "Selamat tidur wkwkkw <3 ";
+                      
+           showDiv();
+           
+       }   mulaipop();
+       
+       async function pesan(){
+       	await swals.fire({
+                  title: 'Pesan untuk orang yang aku sayang', 
+                  imageUrl: 'https://i.postimg.cc/mkrwzGGL/bubududu-panda.gif',
+                  imageWidth: 120, imageHeight: 120,
+                 });   	
+                 await swals.fire({
+                  title: 'Jangan tidur malem² ya manis',
+                  imageUrl: 'https://i.postimg.cc/vZJ2pyt3/peach-goma.gif',
+                  imageWidth: 120, imageHeight: 120,
+                 });
+                 await swals.fire({
+                  title: 'Jaga kesehatanmu &#129392;',
+                  imageUrl: 'https://i.postimg.cc/JnZL9KXB/snuggles-caring.gif',
+                  imageWidth: 120, imageHeight: 120,
+                 });
+                 await swals.fire({
+                  title: 'Dan gak boleh nakal ya! &#129324;',
+                  imageUrl: 'https://i.postimg.cc/wvmq9gCM/mimibubu.gif',
+                  imageWidth: 120, imageHeight: 120,
+                 });
+                 ketik();
+            }
+</script>
+</body>
+</html>

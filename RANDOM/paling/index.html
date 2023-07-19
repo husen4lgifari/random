@@ -1,0 +1,78 @@
+<html>
+<meta charset='UTF-8' />
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5'
+    name='viewport' />
+<meta content='IE=edge' http-equiv='X-UA-Compatible' />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<!--<link href="https://drive.google.com/uc?export=view&id=" rel="stylesheet" type="text/css" /><script src="https://sesibuk.feeldream.repl.co/script.js"></script>-->
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <title>from hus3n4lgifari</title>
+
+</head>
+
+<body>
+
+    <div id="bodyblur">
+        <!-- Wallpaper --><img src="https://feeldreams.github.io/rumahan.jpeg" id="wallpaper" width="100%"
+            height="100%" />
+        <div id="beneranblur"></div>
+    </div>
+
+    <div id='Content'>
+
+        <div id="suratin" onClick="memulai();audio.play();">
+            <!-- Surat --><img src="https://rayyscoding.github.io/envelope.png" />
+        </div>
+        <p id="ket">Klik Suratnya!</p>
+
+        <div><!-- Foto Akhir Edit di Bagian Bawah--><img src="" id="fotoakhir" /></div>
+        <div>
+            <blockquote id='bq'>
+                <p id="kalimat"></p>
+                <p id="kalimatc"></p>
+            </blockquote>
+        </div>
+
+        <!-- Tombol Kirim Pesan -->
+        <div id="Tombol">
+            <a onClick="sjawab()">
+                <b>Kirim Pesan</b>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Jangan Edit Bagian Ini -->
+    <script>
+        function showDiv() { Content.style = "opacity:1;margin-top:15vh;"; ket.style = "margin-top:30px"; }
+        function memulai() { suratin.style = "transition:all 1s ease;transform:scale(.1);opacity:0"; ket.style = "transition:all 1s ease;transform:scale(.1);opacity:0"; setTimeout(pesan, 300) }
+        function kpemb() { bodyblur.style = "opacity:.4;animation:none"; beneranblur.style = "-webkit-backdrop-filter:blur(5px); backdrop-filter:blur(5px)"; wallpaper.style = "transform: scale(1.6)"; suratin.style = "display:none"; ket.style = "display:none"; fotoakhir.style = "display:inline-flex;"; setTimeout(ftmuncul, 100); Content.style = "opacity:1;margin-top:2vh;"; bq.style = "opacity:1;visibility:visible;margin-top:5px"; setTimeout(ngetik, 500) }
+        function ftmuncul() { fotoakhir.style.transform = "scale(1)"; fotoakhir.style.opacity = "1"; }
+        function tombol() { Tombol.style = "margin-top:15px;opacity:1;transform: scale(1);"; ftom = 1; } ftom = 0; function fakhiran() { document.getElementById("akhiran").style = "display:inline-flex"; }
+        const swals = Swal.mixin({ allowOutsideClick: false, cancelButtonColor: '#FF0040', imageWidth: 100, imageHeight: 100, }); const swalst = Swal.mixin({ allowOutsideClick: false, showConfirmButton: false, timer: 3000, timerProgressBar: true, imageWidth: 100, imageHeight: 100, }); const style = document.createElement('style'); var today = new Date(); var dd = String(today.getDate()).padStart(2, '0'); var mm = String(today.getMonth() + 1).padStart(2, '0'); var yyyy = today.getFullYear(); const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]; today = dd + ' ' + monthNames[today.getMonth()] + ' ' + yyyy;
+        function setel() { audio.play(); } function setel2() { bgm.play(); } function sjawab() { if (ftom == 1) { Tombol.style = "display:none"; jawab(); } }
+        function otomatis() { befanimkata(); setTimeout(animkata, 300); } function befanimkata() { kalimatc.style = "transform:scale(.3);"; } function animkata() { kalimatc.style = "transform:scale(1);"; }
+
+        function kemunculan() { otomatis(); kalimatc.innerHTML = ktbwh2; setTimeout(kemunculan2, 2200); } function kemunculan2() { otomatis(); kalimatc.innerHTML = ktbwh3; setTimeout(kemunculan3, 2200); } function kemunculan3() { otomatis(); kalimatc.innerHTML = katangetik2; setTimeout(kemunculan, 2200); }
+        var aa = 0, katangetik; function ngetik() { if (aa < katangetik.length) { kalimat.innerHTML += katangetik.charAt(aa); aa++; setTimeout(ngetik, 80); } if (aa == katangetik.length) { kalimat.style = "margin-bottom:30px"; setTimeout(ngetik2, 300); } }
+        var ai = 0, katangetik2; function ngetik2() { if (ai < katangetik2.length) { kalimatc.innerHTML += katangetik2.charAt(ai); ai++; setTimeout(ngetik2, 180); } if (ai == katangetik2.length) { setTimeout(kemunculan, 2200); setTimeout(tombol, 700) } }
+        async function jawab() { await swals.fire('Kirim pesan ke WhatsApp aku, ya!'); window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp; }
+    </script> <!-- Sampai Sini -->
+
+    <!-- Ganti Kata², Foto, Lagu di bawah ya
+1) Upload foto ke https://postimages.org
+     buat dapetin linknya
+2) Ganti Lagu Upload ke replit.com
+     atau bisa juga ke mailboxdrive.com -->
+
+
+    <script src="husen.js"></script>
+</body>
+
+</html>
